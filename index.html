@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Авторский детейлинг премиальных автомобилей в Москве от сертифицированного мастера Анны (@anna_detail). Полировка кузова, оклейка антигравийной пленкой PPF, керамика 9H, детейлинг-химчистка салона." />
+  <title>ANNA DETAILING • Студия авторского детейлинга в Москве | @anna_detail</title>
+
+  <!-- Typography: Plus Jakarta Sans & Inter with Cyrillic support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="assets/js/tailwind.local.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            studio: {
+              black: '#0d0f12',
+              surface: '#16191f',
+              card: '#1a1e26',
+              cardHover: '#222733',
+              border: '#282e3d',
+            },
+            amber: {
+              detailing: '#e5a93c',
+              detailingHover: '#f5ba4c',
+              glow: 'rgba(229, 169, 60, 0.15)',
+            },
+            cyan: {
+              ceramic: '#38bdf8',
+              glow: 'rgba(56, 189, 248, 0.15)',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Theme Styles & Mobile Relative Header Rule -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Vanilla Interaction Controller (Zero Build Step) -->
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="bg-studio-black text-gray-100 font-sans selection:bg-amber-detailing selection:text-studio-black min-h-screen flex flex-col">
+
+  <!-- =====================================================================
+       SITE HEADER (Strict Constraint: Relative on <=768px, Sticky on >768px)
+       ===================================================================== -->
+  <header id="site-header" class="relative md:sticky md:top-0 z-40 w-full bg-studio-black/95 md:backdrop-blur-md border-b border-white/5 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo & Identity -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-studio-card border border-amber-500/30 flex items-center justify-center text-amber-detailing group-hover:border-amber-detailing group-hover:shadow-[0_0_15px_rgba(229,169,60,0.3)] transition-all">
+          <!-- Car Silhouette Shield SVG -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-extrabold text-white text-lg tracking-tight font-heading block">ANNA DETAILING</span>
+          <span class="text-[11px] font-medium text-gray-400 tracking-wider uppercase flex items-center gap-1.5">
+            <svg class="w-3 h-3 text-amber-detailing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Москва • @anna_detail
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
+        <a href="#services" class="hover:text-amber-detailing transition-colors">Услуги</a>
+        <a href="#showcase" class="hover:text-amber-detailing transition-colors">До / После</a>
+        <a href="#about" class="hover:text-amber-detailing transition-colors">О мастере</a>
+        <a href="#standards" class="hover:text-amber-detailing transition-colors">Стандарты</a>
+        <a href="#contact" class="hover:text-amber-detailing transition-colors">Контакты</a>
+      </nav>
+
+      <!-- Desktop & Mobile Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Telegram Header Link -->
+        <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white text-xs font-semibold transition-all border border-white/10" aria-label="Написать Анне в Telegram">
+          <!-- Telegram Vector SVG -->
+          <svg class="w-4 h-4 text-[#229ED9]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+          </svg>
+          <span>@annaplv</span>
+        </a>
+
+        <!-- Booking CTA Button (Zero Page Scroll Trigger) -->
+        <button type="button" data-modal-target="booking" class="inline-flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-xl bg-amber-detailing hover:bg-amber-detailingHover text-studio-black text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-md shadow-amber-500/20 active:scale-95" aria-label="Записаться">
+          <!-- Spark SVG -->
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+          </svg>
+          <span class="hidden sm:inline">Записаться</span>
+        </button>
+
+        <!-- Mobile Burger Menu Button -->
+        <button type="button" id="mobile-menu-btn" aria-controls="mobile-nav-menu" class="lg:hidden p-2 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors border border-white/10 focus:outline-none" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-studio-surface border-b border-white/10 space-y-3">
+      <a href="#services" class="block py-2 text-sm font-medium text-gray-300 hover:text-amber-detailing">Услуги</a>
+      <a href="#showcase" class="block py-2 text-sm font-medium text-gray-300 hover:text-amber-detailing">До / После</a>
+      <a href="#about" class="block py-2 text-sm font-medium text-gray-300 hover:text-amber-detailing">О мастере</a>
+      <a href="#standards" class="block py-2 text-sm font-medium text-gray-300 hover:text-amber-detailing">Стандарты студии</a>
+      <a href="#contact" class="block py-2 text-sm font-medium text-gray-300 hover:text-amber-detailing">Контакты</a>
+      <div class="pt-3 border-t border-white/5 flex flex-col gap-2">
+        <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/5 text-gray-200 text-xs font-semibold">
+          <svg class="w-4 h-4 text-[#229ED9]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+          </svg>
+          <span>Написать в Telegram @annaplv</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       HERO SECTION
+       Authentic Tagline: "Пилю машины, а не мозг"
+       Location: Москва | Real Studio Visuals
+       ===================================================================== -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-honeycomb-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Craft & Location Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-detailing/10 border border-amber-detailing/30 text-amber-detailing">
+            <svg class="w-3.5 h-3.5 text-amber-detailing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Авторский детейлинг в Москве • Ручная работа</span>
+          </div>
+
+          <!-- Hero Headline with Anna's Authentic Bio Tagline -->
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-heading">
+              Пилю машины, <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-detailing via-amber-200 to-amber-detailing">
+                а не мозг.
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl">
+              Бескомпромиссная восстановительная полировка, бронирование кузова полиуретаном PPF и керамическая защита 9H. Персональный подход мастера без конвейера и переплат.
+            </p>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <!-- Modal Booking CTA -->
+            <button type="button" data-modal-target="booking" class="px-7 py-4 rounded-xl bg-amber-detailing hover:bg-amber-detailingHover text-studio-black font-extrabold text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3">
+              <svg class="w-5 h-5 text-studio-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+              </svg>
+              <span>Записаться к Анне</span>
+            </button>
+
+            <!-- Telegram Direct CTA -->
+            <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="btn-telegram-pulse px-6 py-4 rounded-xl bg-studio-card hover:bg-studio-cardHover text-white font-semibold text-sm transition-all duration-200 border border-white/10 hover:border-[#229ED9]/50 flex items-center justify-center gap-3 group shadow-lg">
+              <svg class="w-5 h-5 text-[#229ED9] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+              </svg>
+              <span>Консультация в Telegram</span>
+            </a>
+          </div>
+
+          <!-- Verified Studio Metrics -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading">125+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-0.5">Кейсов в блоге</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-amber-detailing font-heading">1 700+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-0.5">Аудитория студии</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-ceramic font-heading">100%</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-0.5">Ручной контроль</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Real Studio Photography of Anna & RAM Truck -->
+        <div class="lg:col-span-5 relative">
+          <!-- Background Glow Accent -->
+          <div class="absolute -inset-2 bg-gradient-to-r from-amber-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50"></div>
+          
+          <!-- Card Container -->
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-studio-card shadow-2xl">
+            <!-- Studio Honeycomb Ceiling LED Lighting Reflection with Anna and RAM -->
+            <img src="assets/images/anna-ram-enhanced.png" alt="Мастер Анна в студии детейлинга возле черного RAM 1500 TRX под сотовым светом" class="w-full h-auto object-contain hero-photo" width="1001" height="1572" decoding="async" fetchpriority="high" />
+            
+            <!-- Bottom Floating Overlay Badge -->
+            <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-studio-black via-studio-black/80 to-transparent flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold text-amber-detailing uppercase tracking-wider block">Реальный проект в студии</span>
+                <span class="text-sm font-semibold text-white">RAM 1500 TRX • Защита и детейлинг</span>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-studio-card border border-white/20 flex items-center justify-center text-amber-detailing">
+                <!-- Checkmark SVG -->
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DETAILING SERVICES SECTION (All 4 Core Services)
+       1. Полировка кузова
+       2. Оклейка кузова (PPF)
+       3. Керамические покрытия
+       4. Детейлинг-химчистка салона
+       ===================================================================== -->
+  <section id="services" class="py-20 md:py-28 bg-studio-surface border-y border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-detailing/10 border border-amber-detailing/20 text-amber-detailing">
+          Специализация мастера
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+          Услуги студии детейлинга
+        </h2>
+        <p class="text-gray-400 text-base leading-relaxed">
+          Каждая операция выполняется строго по регламенту с замером толщины ЛКП толщиномером и инспекцией под сотовыми светодиодами.
+        </p>
+      </div>
+
+      <!-- Services Grid (2x2 Layout on Desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Service Card 1: Полировка кузова -->
+        <div class="studio-card-glow rounded-2xl bg-studio-card border border-white/10 overflow-hidden flex flex-col justify-between">
+          <div class="relative service-photo overflow-hidden">
+            <img src="assets/images/anna-polishing-enhanced.png" alt="Анна работает с покрытием автомобиля в студии" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="852" height="1846" decoding="async" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-studio-card via-studio-card/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-studio-black/80 backdrop-blur-md text-amber-detailing border border-amber-500/30 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+              </svg>
+              <span>Глубокий глянец</span>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-white tracking-tight font-heading">Полировка кузова</h3>
+              <p class="text-xs uppercase tracking-wider font-semibold text-amber-detailing">
+                Восстановительная • Мягкая • Предпродажная
+              </p>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Удаление до 95% царапин, паутины от некачественных моек и въевшегося налета. Бережная работа с сохранением максимальной толщины заводского лака без пропилов и голограмм.
+              </p>
+              <ul class="space-y-2 text-xs text-gray-400 pt-2">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Диагностика толщины ЛКП до начала работ</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Премиальные европейские связки паст и кругов</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Финальное обезжиривание и антистатическая очистка</span>
+                </li>
+              </ul>
+            </div>
+            <button type="button" data-modal-target="booking" data-preselect="polishing" class="w-full py-3 px-5 rounded-xl bg-white/5 hover:bg-amber-detailing hover:text-studio-black text-amber-detailing font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-amber-500/30 flex items-center justify-center gap-2">
+              <span>Записаться на полировку</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 2: Оклейка кузова (PPF) -->
+        <div class="studio-card-glow rounded-2xl bg-studio-card border border-white/10 overflow-hidden flex flex-col justify-between">
+          <div class="relative service-photo overflow-hidden">
+            <img src="assets/images/anna-ram-studio.jpg" alt="Анна рядом с RAM в студии детейлинга" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="886" height="1280" decoding="async" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-studio-card via-studio-card/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-studio-black/80 backdrop-blur-md text-cyan-ceramic border border-cyan-500/30 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>Броня от сколов</span>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-white tracking-tight font-heading">Оклейка кузова</h3>
+              <p class="text-xs uppercase tracking-wider font-semibold text-cyan-ceramic">
+                Антигравийная полиуретановая (PPF) и виниловая защита
+              </p>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Надежный щит от сколов, гравия, пескоструя, дорожных реагентов и парковочных притертостей. Высококачественный полиуретан 200 микрон с эффектом самозатягивания царапин при нагреве.
+              </p>
+              <ul class="space-y-2 text-xs text-gray-400 pt-2">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-cyan-ceramic flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Защита ударных зон: капот, бампер, фары, зеркала</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-cyan-ceramic flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Оклейка с подворотом краев — пленка абсолютно невидима</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-cyan-ceramic flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Топовый гидрофобный Top Coat слой</span>
+                </li>
+              </ul>
+            </div>
+            <button type="button" data-modal-target="booking" data-preselect="wrap" class="w-full py-3 px-5 rounded-xl bg-white/5 hover:bg-cyan-ceramic hover:text-studio-black text-cyan-ceramic font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-cyan-500/30 flex items-center justify-center gap-2">
+              <span>Записаться на оклейку</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 3: Керамические покрытия -->
+        <div class="studio-card-glow rounded-2xl bg-studio-card border border-white/10 overflow-hidden flex flex-col justify-between">
+          <div class="relative service-photo overflow-hidden">
+            <img src="assets/images/anna-detailing-process.jpg" alt="Анна наносит состав на поверхность автомобиля в студии" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="669" height="1280" decoding="async" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-studio-card via-studio-card/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-studio-black/80 backdrop-blur-md text-amber-detailing border border-amber-500/30 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+              <span>Гидрофоб 9H</span>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-white tracking-tight font-heading">Керамические покрытия</h3>
+              <p class="text-xs uppercase tracking-wider font-semibold text-amber-detailing">
+                Защита блеска • Гидрофобный эффект 9H
+              </p>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Нанесение твердого нанокерамического состава в 2-3 слоя. Усиливает глубину цвета кузова («мокрый глянец»), отталкивает дорожную грязь и защищает от выгорания на солнце и реагентов.
+              </p>
+              <ul class="space-y-2 text-xs text-gray-400 pt-2">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Экстремальный угол капли (эффект самоочищения)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Сушка каждого слоя под сотовыми лампами</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Срок службы защиты от 12 до 24 месяцев</span>
+                </li>
+              </ul>
+            </div>
+            <button type="button" data-modal-target="booking" data-preselect="ceramic" class="w-full py-3 px-5 rounded-xl bg-white/5 hover:bg-amber-detailing hover:text-studio-black text-amber-detailing font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-amber-500/30 flex items-center justify-center gap-2">
+              <span>Записаться на керамику</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 4: Детейлинг-химчистка салона -->
+        <div class="studio-card-glow rounded-2xl bg-studio-card border border-white/10 overflow-hidden flex flex-col justify-between">
+          <div class="relative service-photo overflow-hidden bg-studio-black flex items-center justify-center">
+            <img src="assets/images/anna-bmw-portrait.jpg" alt="Анна рядом с белой BMW в студии детейлинга" class="w-full h-full object-cover opacity-60" width="1074" height="1280" decoding="async" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-studio-card via-studio-card/50 to-transparent"></div>
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-studio-black/80 backdrop-blur-md text-amber-400 border border-white/20 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 18v3h16v-3"/>
+                <path d="M19 14V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v8"/>
+                <path d="M3 14h18a2 2 0 0 1 2 2v2H1v-2a2 2 0 0 1 2-2z"/>
+              </svg>
+              <span>Премиальный уход</span>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-white tracking-tight font-heading">Детейлинг-химчистка салона</h3>
+              <p class="text-xs uppercase tracking-wider font-semibold text-amber-detailing">
+                Глубокая очистка кожи, алькантары и текстиля
+              </p>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Комплексная экологичная чистка интерьера с разбором или без. Бережная очистка и консервация деликатной кожи, восстановление ворса алькантары, озонирование и дезинфекция воздуховодов.
+              </p>
+              <ul class="space-y-2 text-xs text-gray-400 pt-2">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Питание и гидрофобная консервация кожи кремами</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Безопасная химия без едкого запаха (LeTech / Koch)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-detailing flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Очистка труднодоступных строчек кистями и паром</span>
+                </li>
+              </ul>
+            </div>
+            <button type="button" data-modal-target="booking" data-preselect="dryclean" class="w-full py-3 px-5 rounded-xl bg-white/5 hover:bg-amber-detailing hover:text-studio-black text-amber-detailing font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-amber-500/30 flex items-center justify-center gap-2">
+              <span>Записаться на химчистку</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       INTERACTIVE BEFORE / AFTER PAINT CORRECTION SHOWCASE
+       GPU-accelerated CSS clip-path comparison slider
+       ===================================================================== -->
+  <section id="showcase" class="py-20 md:py-28 bg-studio-black relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-cyan-ceramic/10 border border-cyan-ceramic/20 text-cyan-ceramic">
+          Результат работы
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+          Полировка: до и после
+        </h2>
+        <p class="text-gray-400 text-base leading-relaxed">
+          Реальные фотографии автомобиля до и после полировки. Потяните разделитель, чтобы сравнить состояние поверхности и отражения. Ракурс и освещение снимков немного различаются.
+        </p>
+      </div>
+
+      <!-- Interactive Slider Element -->
+      <div class="relative w-full max-w-4xl mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 select-none shadow-2xl bg-studio-card" id="slider-wrapper">
+        <!-- After Image (Base Layer) -->
+        <img src="assets/images/paint-after.jpg" alt="Автомобиль после полировки: чёткие отражения на двери и зеркале" class="absolute inset-0 w-full h-full object-cover pointer-events-none" width="656" height="1280" decoding="async" loading="lazy" />
+        <div class="absolute bottom-5 right-5 z-10 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-studio-black/85 backdrop-blur-md text-amber-detailing border border-amber-500/30 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-amber-detailing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>После полировки</span>
+        </div>
+
+        <!-- Before Image (Clipped Overlay Layer) -->
+        <img src="assets/images/paint-before.jpg" alt="Автомобиль до полировки: помутнение и следы на лаке" id="slider-before-img" class="absolute inset-0 w-full h-full object-cover pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);" width="689" height="1280" decoding="async" loading="lazy" />
+        <div id="slider-before-badge" class="absolute bottom-5 left-5 z-10 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-studio-black/85 backdrop-blur-md text-gray-300 border border-white/20">
+          <span>До полировки</span>
+        </div>
+
+        <!-- Central Divider Bar & Drag Handle -->
+        <div id="slider-divider" class="absolute inset-y-0 left-1/2 -ml-px w-0.5 bg-amber-detailing pointer-events-none shadow-[0_0_15px_rgba(229,169,60,0.8)] z-10" style="left: 50%;">
+          <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-0 w-11 h-11 rounded-full bg-studio-black border-2 border-amber-detailing flex items-center justify-center shadow-2xl text-amber-detailing">
+            <!-- Double Chevron Left & Right Vector SVG -->
+            <svg class="w-5 h-5 text-amber-detailing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="8 9 5 12 8 15"/>
+              <polyline points="16 9 19 12 16 15"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Accessible Range Controller Input -->
+        <input type="range" min="0" max="100" value="50" step="0.1" id="slider-range-input" aria-label="Сравнение ЛКП автомобиля до и после восстановительной полировки" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" />
+      </div>
+
+      <p class="comparison-note">Снимки целиком: <a href="assets/images/paint-before.jpg" target="_blank" rel="noopener noreferrer">до полировки</a> · <a href="assets/images/paint-after.jpg" target="_blank" rel="noopener noreferrer">после полировки</a></p>
+
+      <!-- Feature Bullets Below Slider -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10">
+        <div class="p-4 rounded-xl bg-studio-surface border border-white/5 flex items-start gap-3">
+          <div class="p-2 rounded-lg bg-amber-detailing/10 text-amber-detailing flex-shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white block">Оптическая глубина</span>
+            <span class="text-xs text-gray-400 mt-0.5 block">Устранение мутного налета и возвращение насыщенного сочного оттенка.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-studio-surface border border-white/5 flex items-start gap-3">
+          <div class="p-2 rounded-lg bg-cyan-ceramic/10 text-cyan-ceramic flex-shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white block">Сохранение лака</span>
+            <span class="text-xs text-gray-400 mt-0.5 block">Степень коррекции подбирается после осмотра и замера толщины покрытия.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-studio-surface border border-white/5 flex items-start gap-3">
+          <div class="p-2 rounded-lg bg-white/10 text-gray-300 flex-shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2"/></svg>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white block">Контроль под сотами</span>
+            <span class="text-xs text-gray-400 mt-0.5 block">Инспекция каждого квадратного сантиметра при направленном свете 6500K.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       ABOUT MASTER ANNA SECTION
+       Personal approach, non-conveyor philosophy, verified metrics
+       ===================================================================== -->
+  <section id="about" class="py-20 md:py-28 bg-studio-surface border-y border-white/5 relative bg-honeycomb-subtle">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Master Anna Profile & Avatar -->
+        <div class="lg:col-span-5 flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
+          <div class="relative">
+            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-amber-detailing shadow-[0_0_30px_rgba(229,169,60,0.25)] bg-studio-card">
+              <img src="assets/images/anna_avatar.png" alt="Анна — мастер детейлинга в Москве" class="w-full h-full object-cover anna-portrait" width="192" height="192" decoding="async" loading="lazy" />
+            </div>
+            <div class="absolute bottom-1 right-1 p-2 rounded-full bg-studio-black border border-amber-500/40 text-amber-detailing shadow-lg">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading">Анна Плевнева</h3>
+            <p class="text-xs uppercase tracking-wider font-semibold text-amber-detailing">
+              Основатель и ведущий мастер студии @anna_detail
+            </p>
+            <p class="text-xs text-gray-400">Москва • Личный опыт в автоиндустрии</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-studio-card border border-white/10 w-full text-left space-y-2">
+            <div class="text-xs text-gray-400 uppercase tracking-wider font-bold">Философия мастера</div>
+            <p class="text-sm text-gray-200 italic leading-relaxed">
+              «Пилю машины, а не мозг. Я принципиально не держу конвейерный поток и не доверяю автомобили стажерам. Каждый клиент получает честный расчет стоимости по фото и результат, за который я отвечаю лично своим именем.»
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Pillars of Craft & Transparency -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-detailing/10 border border-amber-detailing/20 text-amber-detailing">
+              Честный детейлинг
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+              Почему премиум-авто доверяют именно Анне
+            </h2>
+            <p class="text-gray-300 text-base leading-relaxed">
+              В Москве сотни детейлинг-центров, но владельцы RAM, Audi, Porsche и BMW выбирают авторский подход, где мастер знает каждый сантиметр их кузова.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="p-5 rounded-2xl bg-studio-card border border-white/5 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-detailing/10 text-amber-detailing flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4 class="text-base font-bold text-white">Никаких стажеров</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Ваш автомобиль не станет полигоном для обучения новичков. Все этапы — от мойки до финишного состава — выполняет мастер.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-studio-card border border-white/5 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-detailing/10 text-amber-detailing flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4 class="text-base font-bold text-white">Честная оценка</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Без навязывания лишних слоев и бесполезных процедур. Точный расчет сметы до заезда машины в бокс.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-studio-card border border-white/5 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-cyan-ceramic/10 text-cyan-ceramic flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4 class="text-base font-bold text-white">Фотоотчет процесса</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Вы видите каждый этап детейлинга в личном Telegram-чате: замеры, полировку зон, нанесение керамики.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-studio-card border border-white/5 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-cyan-ceramic/10 text-cyan-ceramic flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4 class="text-base font-bold text-white">Специнспекция светом</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Студия оборудована потолочными и боковыми сотовыми LED-матрицами, исключающими скрытые дефекты.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="button" data-modal-target="booking" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-amber-detailing hover:bg-amber-detailingHover text-studio-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20">
+              <span>Забронировать удобный день</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       STUDIO STANDARDS & WORKFLOW (4-Step Pipeline)
+       1. Осмотр ЛКП
+       2. Очистка
+       3. Коррекция
+       4. Контроль под сотами
+       ===================================================================== -->
+  <section id="standards" class="py-20 md:py-28 bg-studio-black relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-detailing/10 border border-amber-detailing/20 text-amber-detailing">
+          Регламент студии
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+          4 шага идеального результата
+        </h2>
+        <p class="text-gray-400 text-base leading-relaxed">
+          Проверенный технологический процесс, гарантирующий безопасность заводских покрытий и долговременную защиту.
+        </p>
+      </div>
+
+      <!-- 4-Step Process Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-studio-card border border-white/5 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-detailing/10 text-amber-detailing flex items-center justify-center font-extrabold text-base font-heading">
+              01
+            </div>
+            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Шаг первый</div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Осмотр и замер</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Детальная диагностика ЛКП ультразвуковым толщиномером, составление дефектовочной карты царапин и сколов.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-studio-card border border-white/5 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-detailing/10 text-amber-detailing flex items-center justify-center font-extrabold text-base font-heading">
+              02
+            </div>
+            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Шаг второй</div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Глубокая очистка</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Трехфазная безопасная мойка, удаление битума, колодочной пыли и металлических вкраплений синтетической глиной.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-studio-card border border-white/5 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-detailing/10 text-amber-detailing flex items-center justify-center font-extrabold text-base font-heading">
+              03
+            </div>
+            <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Шаг третий</div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Коррекция и броня</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Многоэтапная полировка пастами разной зернистости, оклейка пленкой PPF или послойное запекание керамики 9H.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-studio-card border border-white/5 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-cyan-ceramic/10 text-cyan-ceramic flex items-center justify-center font-extrabold text-base font-heading">
+              04
+            </div>
+            <div class="text-[11px] font-bold text-cyan-ceramic uppercase tracking-wider">Финальный контроль</div>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading">Контроль под сотами</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Финальная инспекция под сотовыми LED-матрицами с разной цветовой температурой света для идеальной выдачи клиенту.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CALL TO ACTION BANNER
+       ===================================================================== -->
+  <section class="py-16 bg-studio-surface border-t border-white/5 relative bg-honeycomb-pattern">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-detailing/10 border border-amber-detailing/20 text-amber-detailing">
+        Запись на сезон
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading">
+        Верните автомобилю безупречный заводской вид
+      </h2>
+      <p class="text-gray-300 text-base max-w-2xl mx-auto leading-relaxed">
+        Отправьте фото вашего автомобиля в Telegram для оперативного расчета стоимости и подбора удобного дня заезда в студию.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <button type="button" data-modal-target="booking" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-detailing hover:bg-amber-detailingHover text-studio-black font-extrabold text-sm uppercase tracking-wider transition-all shadow-xl shadow-amber-500/25 active:scale-95 flex items-center justify-center gap-3">
+          <svg class="w-5 h-5 text-studio-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+          </svg>
+          <span>Записаться на детейлинг</span>
+        </button>
+        <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-studio-card hover:bg-studio-cardHover text-white font-semibold text-sm transition-all border border-white/10 hover:border-[#229ED9]/50 flex items-center justify-center gap-3">
+          <svg class="w-5 h-5 text-[#229ED9]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+          </svg>
+          <span>Написать в Telegram @annaplv</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MINIMALIST STUDIO FOOTER
+       ===================================================================== -->
+  <footer id="contact" class="mt-auto bg-studio-black border-t border-white/5 py-12 text-sm text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Brand Info -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-studio-card border border-amber-500/30 flex items-center justify-center text-amber-detailing">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-bold text-white tracking-tight">ANNA DETAILING</span>
+            <span class="text-xs text-gray-500 block">Москва • Авторский детейлинг</span>
+          </div>
+        </div>
+
+        <!-- Direct Social / Messengers -->
+        <div class="flex items-center gap-6">
+          <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors">
+            <svg class="w-4 h-4 text-[#229ED9]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+            </svg>
+            <span>Telegram: @annaplv</span>
+          </a>
+          <span class="text-gray-600 hidden sm:inline">•</span>
+          <span class="text-xs text-gray-500 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Москва (по записи)</span>
+          </span>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-xs text-gray-500 text-center md:text-right">
+          © 2026 ANNA DETAILING. Все права защищены.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       INTERACTIVE BOOKING MODAL (Zero Page Scroll Architecture)
+       Backdrop blur, scale/fade animation, ESC/backdrop close, Telegram CTA
+       ===================================================================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300 ease-out hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    
+    <!-- Backdrop Blur Layer -->
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300" data-modal-backdrop></div>
+
+    <!-- Modal Content Dialog Card -->
+    <div class="relative w-full max-w-lg my-auto bg-studio-card border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl z-10 transform scale-95 transition-transform duration-300 ease-out" data-modal-dialog>
+      
+      <!-- Close Button -->
+      <button type="button" class="absolute top-5 right-5 p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none" data-modal-close aria-label="Закрыть модальное окно">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-detailing bg-amber-detailing/10 border border-amber-detailing/20 mb-3">
+          Прямая запись к Анне
+        </div>
+        <h3 id="modal-title" class="text-2xl font-bold text-white tracking-tight font-heading">Записаться на детейлинг</h3>
+        <p class="text-sm text-gray-400 mt-1">Москва • Индивидуальный проект и ручная работа</p>
+      </div>
+
+      <!-- Direct Telegram Fast CTA -->
+      <div class="mb-6">
+        <a href="https://t.me/annaplv" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full py-3.5 px-5 rounded-xl bg-[#229ED9] hover:bg-[#1e8ec3] text-white font-semibold transition-all duration-200 shadow-lg shadow-[#229ED9]/25 hover:shadow-[#229ED9]/40 group">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.92z"/>
+          </svg>
+          <span>Написать напрямую в Telegram</span>
+        </a>
+        <p class="text-xs text-center text-gray-500 mt-2">Отвечаю лично, рассчитываю стоимость по фото авто</p>
+      </div>
+
+      <!-- Divider -->
+      <div class="relative flex py-2 items-center mb-6">
+        <div class="flex-grow border-t border-white/10"></div>
+        <span class="flex-shrink mx-4 text-xs uppercase tracking-wider text-gray-500">или подготовить сообщение</span>
+        <div class="flex-grow border-t border-white/10"></div>
+      </div>
+
+      <!-- Callback & Service Form -->
+      <form id="booking-inquiry-form" class="space-y-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2">Выберите услугу</label>
+          <div class="grid grid-cols-2 gap-2" id="service-options">
+            <label class="cursor-pointer">
+              <input type="radio" name="service" value="polishing" class="peer sr-only" checked />
+              <div class="p-2.5 rounded-lg border border-white/10 peer-checked:border-amber-detailing peer-checked:bg-amber-detailing/10 text-xs text-center font-medium text-gray-300 peer-checked:text-white transition-all">
+                Полировка кузова
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="service" value="wrap" class="peer sr-only" />
+              <div class="p-2.5 rounded-lg border border-white/10 peer-checked:border-amber-detailing peer-checked:bg-amber-detailing/10 text-xs text-center font-medium text-gray-300 peer-checked:text-white transition-all">
+                Оклейка PPF
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="service" value="ceramic" class="peer sr-only" />
+              <div class="p-2.5 rounded-lg border border-white/10 peer-checked:border-amber-detailing peer-checked:bg-amber-detailing/10 text-xs text-center font-medium text-gray-300 peer-checked:text-white transition-all">
+                Керамика 9H
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="service" value="dryclean" class="peer sr-only" />
+              <div class="p-2.5 rounded-lg border border-white/10 peer-checked:border-amber-detailing peer-checked:bg-amber-detailing/10 text-xs text-center font-medium text-gray-300 peer-checked:text-white transition-all">
+                Химчистка салона
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="client-name" class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1.5">Ваше имя</label>
+          <input type="text" id="client-name" name="client_name" autocomplete="name" maxlength="100" required placeholder="Константин" class="w-full px-4 py-2.5 rounded-xl bg-studio-surface border border-white/10 text-white placeholder-gray-500 text-sm focus:border-amber-detailing focus:outline-none transition-colors" />
+        </div>
+
+        <div>
+          <label for="client-phone" class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1.5">Телефон или Telegram</label>
+          <input type="text" id="client-phone" name="contact" autocomplete="tel" maxlength="100" required placeholder="+7 (999) 000-00-00 / @username" class="w-full px-4 py-2.5 rounded-xl bg-studio-surface border border-white/10 text-white placeholder-gray-500 text-sm focus:border-amber-detailing focus:outline-none transition-colors" />
+        </div>
+
+        <div>
+          <label for="client-car" class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1.5">Автомобиль (марка, модель)</label>
+          <input type="text" id="client-car" name="car" maxlength="150" placeholder="Audi A6 / RAM 1500" class="w-full px-4 py-2.5 rounded-xl bg-studio-surface border border-white/10 text-white placeholder-gray-500 text-sm focus:border-amber-detailing focus:outline-none transition-colors" />
+        </div>
+
+        <button type="submit" class="w-full py-3.5 px-5 rounded-xl bg-amber-detailing hover:bg-amber-detailingHover text-studio-black font-bold text-sm tracking-wide uppercase transition-all duration-200 shadow-lg shadow-amber-500/20 mt-2">
+          Продолжить в Telegram
+        </button>
+
+        <div id="modal-success-message" role="status" aria-live="polite" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm text-center">
+          Отправьте сообщение в Telegram. Запись подтверждается лично Анной в переписке.
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
